@@ -1,0 +1,22 @@
+Why does it happen?
+Usually when Git cannot automatically combine changes, such as two branches modifying the same part of a file.
+Resolution workflow
+git status
+
+# Open conflicting file
+
+# Remove:
+<<<<<<< HEAD
+=======
+>>>>>>> branch-name
+
+# Keep the required content
+
+git add <file>
+
+git commit -m "Resolve merge conflict"
+
+I check git status to identify the conflicting files, manually resolve the conflict, stage the resolved files using git add, and commit the merge. Then I verify the repository and run tests.
+
+```git merge --abort```
+This cancels an ongoing merge.
